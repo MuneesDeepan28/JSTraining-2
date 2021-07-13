@@ -2,11 +2,22 @@
 <html>
 
 <head>
+	<link rel="stylesheet" href="globalStyle.css">
+	</link>
+	<link rel="stylesheet" href="../style.css">
+	</link>
+	<!-- <link rel="stylesheet" href="../../globalStyle.css"></link> -->
 	<title>Form Manipulation</title>
+	<style>
+		h2 {
+			color: Black;
+		}
+	</style>
 </head>
 
 <body>
-	<form name="employeeDetails">
+	<h2 style="color:red">Employee Details</h2>
+	<form name="employeeDetails" onsubmit="return false">
 		<table>
 			<tr>
 				<td><label>Employee Name</label></td>
@@ -24,12 +35,12 @@
 			<tr>
 				<td><label>Occupation</label></td>
 				<td><select name="employeeOccupation" id="employeeOccupation">
-						<option></option>
-						<option>Manager</option>
-						<option>HR</option>
-						<option>Frontend Developer</option>
-						<option>Backend Developer</option>
-						<option>Manual Tester</option>
+						<option value=""></option>
+						<option value="Manager">Manager</option>
+						<option value="HR">HR</option>
+						<option value="Frontend Developer">Frontend Developer</option>
+						<option value="Backend Developer">Backend Developer</option>
+						<option value="Manual Tester">Manual Tester</option>
 					</select></td>
 			</tr>
 			<tr>
@@ -54,15 +65,16 @@
 			</tr>
 			<tr>
 				<td></td>
-				<td><input type="button" value="Click To Add" onclick="addEmployeeDetails()"></td>
+				<td><input type="submit" value="Click To Add" onclick="addEmployeeDetails()"></td>
 			</tr>
 		</table>
 	</form><br>
-	<table border="2black">
+	<h2>Display Employee details in table</h2>
+	<table>
 		<thead>
 			<tr>
-				<th>Employee Name</th>
 				<th>Employee Id</th>
+				<th>Employee Name</th>
 				<th>Gender</th>
 				<th>Occupation</th>
 				<th>Hobbies</th>
@@ -81,14 +93,14 @@
 			var empid = document.getElementById("employeeId").value;
 			var empGender = document.employeeDetails.gender.value;
 			var empOccupation = document.getElementById("employeeOccupation").value;
-			var Hobbies = document.querySelectorAll('input[type="checkbox"]:checked');
-			for (var emphobbies of Hobbies) {
-				empHobbies.push(emphobbies.value);
+			Hobbies = document.querySelectorAll('input[type="checkbox"]:checked');
+			for (var employeeHobbies = 0; employeeHobbies < Hobbies.length; employeeHobbies++) {
+				empHobbies.push(Hobbies[employeeHobbies].value);
 			}
 			var empSalary = document.getElementById("employeeSalary").value;
 			displayData += "<tr>";
-			displayData += "<td>" + empName + "</td>";
 			displayData += "<td>" + empid + "</td>";
+			displayData += "<td>" + empName + "</td>";
 			displayData += "<td>" + empGender + "</td>";
 			displayData += "<td>" + empOccupation + "</td>";
 			displayData += "<td>" + empHobbies + "</td>";
