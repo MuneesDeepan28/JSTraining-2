@@ -93,9 +93,9 @@
 			var empid = document.getElementById("employeeId").value;
 			var empGender = document.employeeDetails.gender.value;
 			var empOccupation = document.getElementById("employeeOccupation").value;
-			Hobbies = document.querySelectorAll('input[type="checkbox"]:checked');
-			for (let employeeHobbies = 0; employeeHobbies < Hobbies.length; employeeHobbies++) {
-				empHobbies.push(Hobbies[employeeHobbies].value);
+			var selectHobbies = document.querySelectorAll('input[type="checkbox"]:checked');
+			for (let employeeHobbies = 0; employeeHobbies < selectHobbies.length; employeeHobbies++) {
+				empHobbies.push(selectHobbies[employeeHobbies].value);
 			}
 			var empSalary = document.getElementById("employeeSalary").value;
 			displayData += "<tr>";
