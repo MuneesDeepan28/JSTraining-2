@@ -36,11 +36,11 @@
 				<td><label>Occupation</label></td>
 				<td><select name="employeeOccupation" id="employeeOccupation">
 						<option value=""></option>
-						<option value="Manager">Manager</option>
-						<option value="HR">HR</option>
-						<option value="Frontend Developer">Frontend Developer</option>
-						<option value="Backend Developer">Backend Developer</option>
-						<option value="Manual Tester">Manual Tester</option>
+						<option value="manager">Manager</option>
+						<option value="hr">HR</option>
+						<option value="frontenddeveloper">Frontend Developer</option>
+						<option value="backenddeveloper">Backend Developer</option>
+						<option value="manualtester">Manual Tester</option>
 					</select></td>
 			</tr>
 			<tr>
@@ -94,7 +94,7 @@
 			var empGender = document.employeeDetails.gender.value;
 			var empOccupation = document.getElementById("employeeOccupation").value;
 			Hobbies = document.querySelectorAll('input[type="checkbox"]:checked');
-			for (var employeeHobbies = 0; employeeHobbies < Hobbies.length; employeeHobbies++) {
+			for (let employeeHobbies = 0; employeeHobbies < Hobbies.length; employeeHobbies++) {
 				empHobbies.push(Hobbies[employeeHobbies].value);
 			}
 			var empSalary = document.getElementById("employeeSalary").value;
