@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="globalStyle.css">
+	</link>
+	<link rel="stylesheet" href="../style.css">
+	</link>
+	<!-- <link rel="stylesheet" href="../../globalStyle.css"></link> -->
+	<title>Form Manipulation</title>
+	<style>
+		h2 {
+			color: Black;
+		}
+	</style>
+</head>
+
+<body>
+	<h2 style="color:red">Employee Details</h2>
+	<form name="employeeDetails" onsubmit="return false">
+		<table>
+			<tr>
+				<td><label>Employee Name</label></td>
+				<td><input type="text" name="employeeName" id="employeeName"></td>
+			</tr>
+			<tr>
+				<td><label>Employee Id</label></td>
+				<td><input type="number" name="employeeId" id="employeeId"></td>
+			</tr>
+			<tr>
+				<td><label>Gender</label></td>
+				<td><input type="radio" name="gender" id="male" value="Male">Male</td>
+				<td><input type="radio" name="gender" id="female" value="Female">Female</td>
+			</tr>
+			<tr>
+				<td><label>Occupation</label></td>
+				<td><select name="employeeOccupation" id="employeeOccupation">
+						<option value=""></option>
+						<option value="manager">Manager</option>
+						<option value="hr">HR</option>
+						<option value="frontenddeveloper">Frontend Developer</option>
+						<option value="backenddeveloper">Backend Developer</option>
+						<option value="manualtester">Manual Tester</option>
+					</select></td>
+			</tr>
+			<tr>
+				<td><label>Hobbies</label></td>
+				<td><input type="checkbox" name="hobbies" value="Hearing Music" id="music">Hearing Music</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="checkbox" name="hobbies" value="swimming" id="swimming">swimming</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="checkbox" name="hobbies" value="Reading Books" id="Reading Books">Reading Books</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="checkbox" name="hobbies" value="Playing" id="Playing">Playing</td>
+			</tr>
+			<tr>
+				<td><label>Salary</label></td>
+				<td><input type="text" name="employeeSalary" id="employeeSalary"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Click To Add" onclick="addEmployeeDetails()"></td>
+			</tr>
+		</table>
+	</form><br>
+	<h2>Display Employee details in table</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Employee Id</th>
+				<th>Employee Name</th>
+				<th>Gender</th>
+				<th>Occupation</th>
+				<th>Hobbies</th>
+				<th>Salary</th>
+			</tr>
+		</thead>
+		<tbody id="displayEmployeeDetails">
+
+		</tbody>
+	</table>
+	<script>
+		function addEmployeeDetails() {
+			var displayData = "";
+			var empHobbies = [];
+			var empName = document.getElementById("employeeName").value;
+			var empid = document.getElementById("employeeId").value;
+			var empGender = document.employeeDetails.gender.value;
+			var empOccupation = document.getElementById("employeeOccupation").value;
+			var selectHobbies = document.querySelectorAll('input[type="checkbox"]:checked');
+			for (let employeeHobbies = 0; employeeHobbies < selectHobbies.length; employeeHobbies++) {
+				empHobbies.push(selectHobbies[employeeHobbies].value);
+			}
+			var empSalary = document.getElementById("employeeSalary").value;
+			displayData += "<tr>";
+			displayData += "<td>" + empid + "</td>";
+			displayData += "<td>" + empName + "</td>";
+			displayData += "<td>" + empGender + "</td>";
+			displayData += "<td>" + empOccupation + "</td>";
+			displayData += "<td>" + empHobbies + "</td>";
+			displayData += "<td>" + empSalary + "</td>";
+			displayData += "</tr>";
+			document.getElementById("displayEmployeeDetails").innerHTML = displayData;
+		}
+	</script>
+</body>
+
+</html>
