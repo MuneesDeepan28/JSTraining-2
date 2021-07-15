@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="globalStyle.css"></link>
+	<link rel="stylesheet" href="../style.css"></link>
+	<title>Form Manipulation</title>
+</head>
+
+<body>
+	<h2 id="heading">Employee Details</h2>
+	<form name="employeeDetails" onsubmit="return false">
+		<table>
+			<tr>
+				<td><label>Employee Name</label></td>
+				<td><input type="text" name="employeeName" id="employeeName"></td>
+			</tr>
+			<tr>
+				<td><label>Employee Id</label></td>
+				<td><input type="number" name="employeeId" id="employeeId"></td>
+			</tr>
+			<tr>
+				<td><label>Gender</label></td>
+				<td><input type="radio" name="gender" id="male" value="Male">Male</td>
+				<td><input type="radio" name="gender" id="female" value="Female">Female</td>
+			</tr>
+			<tr>
+				<td><label>Occupation</label></td>
+				<td><select name="employeeOccupation" id="employeeOccupation">
+						<option value=""></option>
+						<option value="manager">Manager</option>
+						<option value="hr">HR</option>
+						<option value="frontend_developer">Frontend Developer</option>
+						<option value="backend_developer">Backend Developer</option>
+						<option value="manual_tester">Manual Tester</option>
+					</select></td>
+			</tr>
+			<tr>
+				<td><label>Hobbies</label></td>
+				<td><input type="checkbox" name="hobbies" value="Hearing Music" id="music">Hearing Music</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="checkbox" name="hobbies" value="swimming" id="swimming">swimming</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="checkbox" name="hobbies" value="Reading Books" id="Reading Books">Reading Books</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="checkbox" name="hobbies" value="Playing" id="Playing">Playing</td>
+			</tr>
+			<tr>
+				<td><label>Salary</label></td>
+				<td><input type="text" name="employeeSalary" id="employeeSalary"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="reset" value="Reset">
+					<input type="submit" value="Click To Add" onclick="addEmployeeDetails()">
+				</td>
+			</tr>
+		</table>
+	</form><br>
+	<div class="addBackgroundColor">
+		<h2>Display Employee details in table</h2>
+	</div>
+	<table border="2black">
+		<tr>
+			<th>Employee Id</th>
+			<th>Employee Name</th>
+			<th>Gender</th>
+			<th>Occupation</th>
+			<th>Hobbies</th>
+			<th>Salary</th>
+		</tr>
+		<tbody id="displayEmployeeDetails">
+		</tbody>
+	</table>
+	<script type="text/javascript" src="assets/js/addEmployeeDetails.js"></script>
+</body>
+
+</html>
