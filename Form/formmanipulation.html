@@ -2,14 +2,17 @@
 <html>
 
 <head>
-	<link rel="stylesheet" href="globalStyle.css"></link>
-	<link rel="stylesheet" href="../style.css"></link>
+	<link rel="stylesheet" href="globalStyle.css">
+	</link>
+	<link rel="stylesheet" href="../style.css">
+	</link>
+	<!-- <link rel="stylesheet" href="../../globalStyle.css"></link> -->
 	<title>Form Manipulation</title>
 </head>
 
 <body>
 	<h2 id="heading">Employee Details</h2>
-	<form name="employeeDetails" onsubmit="return false">
+	<form name="employeeDetails" id="employeeDetail" onsubmit="return false">
 		<table>
 			<tr>
 				<td><label>Employee Name</label></td>
@@ -30,35 +33,57 @@
 						<option value=""></option>
 						<option value="manager">Manager</option>
 						<option value="hr">HR</option>
-						<option value="frontend_developer">Frontend Developer</option>
-						<option value="backend_developer">Backend Developer</option>
-						<option value="manual_tester">Manual Tester</option>
+						<option value="frontendDeveloper">Frontend Developer</option>
+						<option value="backendDeveloper">Backend Developer</option>
+						<option value="manualTester">Manual Tester</option>
 					</select></td>
 			</tr>
 			<tr>
 				<td><label>Hobbies</label></td>
-				<td><input type="checkbox" name="hobbies" value="Hearing Music" id="music">Hearing Music</td>
+				<td><input type="checkbox" name="hobbies" value="hearingMusic" id="music">Hearing Music</td>
+				<td><input type="checkbox" name="hobbies" value="cycling" id="cycling">Cycling</td>
 			</tr>
 			<tr>
 				<td></td>
 				<td><input type="checkbox" name="hobbies" value="swimming" id="swimming">swimming</td>
+				<td><input type="checkbox" name="hobbies" value="travelling" id="travelling">Travelling</td>
 			</tr>
 			<tr>
 				<td></td>
-				<td><input type="checkbox" name="hobbies" value="Reading Books" id="Reading Books">Reading Books</td>
+				<td><input type="checkbox" name="hobbies" value="animation" id="animation">Animation</td>
+				<td><input type="checkbox" name="hobbies" value="basketball" id="basketball">Basketball</td>
 			</tr>
 			<tr>
 				<td></td>
-				<td><input type="checkbox" name="hobbies" value="Playing" id="Playing">Playing</td>
+				<td><input type="checkbox" name="hobbies" value="hunting" id="hunting">Hunting</td>
+				<td><input type="checkbox" name="hobbies" value="vollyball" id="vollyball">VollyBall</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="checkbox" name="hobbies" value="readingBooks" id="readingBooks">Reading Books</td>
+				<td><input type="checkbox" name="hobbies" value="hunting" id="hunting">Hunting</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="checkbox" name="hobbies" value="playing" id="playing">Playing</td>
+				<td><input type="checkbox" name="hobbies" value="fishkeeping" id="fishkeeping">Fishkeeping</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="checkbox" name="hobbies" value="hacking" id="hacking">Hacking</td>
+				<td><input type="checkbox" name="hobbies" value="breadmaking" id="breadmaking">Breadmaking</td>
 			</tr>
 			<tr>
 				<td><label>Salary</label></td>
 				<td><input type="text" name="employeeSalary" id="employeeSalary"></td>
 			</tr>
 			<tr>
+				<td><label>EmailId</label></td>
+				<td><input type="email" name="emailId" id="emailId"></td>
+			</tr>
+			<tr>
 				<td></td>
-				<td><input type="reset" value="Reset">
-					<input type="submit" value="Click To Add" onclick="addEmployeeDetails()">
+				<td><input type="submit" value="Click To Add" onclick="addEmployeeDetails()">
 				</td>
 			</tr>
 		</table>
@@ -74,6 +99,7 @@
 			<th>Occupation</th>
 			<th>Hobbies</th>
 			<th>Salary</th>
+			<th>EmailId</th>
 		</tr>
 		<tbody id="displayEmployeeDetails">
 		</tbody>
